@@ -21,9 +21,11 @@ class App < Sinatra::Base
     "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
   end
 
-  get '/add/:number1/:number2' do
+  get '/operation/:number1/:number2' do
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-    eval "5 + 4"
+    @operator = params[:operation]
+    operator_hash = {"add" => +, "subtract" => -, "multiply" => *, "divide" => /}
+    "#{@number1} #{operator_hash[@operator]} #{@number2}"
   end
 end
