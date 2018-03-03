@@ -25,7 +25,7 @@ class App < Sinatra::Base
     @number1 = params[:number1]
     @number2 = params[:number2]
     @operator = params[:operation]
-    operator_hash = {"add" => +, "subtract" => -, "multiply" => *, "divide" => /}
+    operator_hash = {"add" => "+", "subtract" => "-", "multiply" => "*", "divide" => "/"}
     "#{@number1} #{operator_hash[@operator]} #{@number2}"
   end
 end
