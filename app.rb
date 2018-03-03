@@ -23,5 +23,6 @@ class App < Sinatra::Base
 
   get 'add/:number1/:number2' do
     eval "params[:number1] + params[:number2]"
+    "test"
   end
 end
